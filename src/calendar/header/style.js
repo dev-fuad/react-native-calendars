@@ -33,6 +33,9 @@ export default function(theme={}) {
         }
       })
     },
+    weekBackground: {
+      ...StyleSheet.absoluteFillObject,
+    },
     week: {
       marginTop: 7,
       flexDirection: 'row',
@@ -45,7 +48,8 @@ export default function(theme={}) {
       textAlign: 'center',
       fontSize: appStyle.textDayHeaderFontSize,
       fontFamily: appStyle.textDayHeaderFontFamily,
-      color: appStyle.textSectionTitleColor
+      color: appStyle.textSectionTitleColor,
+      backgroundColor: 'transparent'
     },
     ...(theme[STYLESHEET_ID] || {})
   });
