@@ -84,6 +84,11 @@ class CalendarList extends Component {
       openDate: date
     };
 
+    this.viewabilityConfig = {
+      waitForInteraction: true,
+      viewAreaCoveragePercentThreshold: 15
+    };
+
     this.onViewableItemsChangedBound = this.onViewableItemsChanged.bind(this);
     this.renderCalendarBound = this.renderCalendar.bind(this);
     this.getItemLayout = this.getItemLayout.bind(this);
@@ -200,6 +205,7 @@ class CalendarList extends Component {
       <FlatList
         onLayout={this.onLayout}
         ref={(c) => this.listView = c}
+        viewabilityConfig={this.viewabilityConfig}
         //scrollEventThrottle={1000}
         style={[this.style.container, this.props.style]}
         initialListSize={this.props.pastScrollRange + this.props.futureScrollRange + 1}
